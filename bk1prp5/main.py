@@ -24,25 +24,26 @@ class EuclidPointWithLabel(AnnotationDot):
 
 class Book1Prop5(Scene):
     def construct(self):
-        baseBC = Line(color=BLUE)
+        radius = 1
+        baseBC = Line(color=BLUE, start=np.array([-2, 0, 0]), end=np.array([2, 0, 0]))
         lineAB = Line(color=PINK).put_start_and_end_on(
-            np.array([-1, 0, 0]), np.array([0, 3 * np.sin(PI / 4), 0])
+            np.array([-2, 0, 0]), np.array([0, 3 * np.sin(PI / 2), 0])
         )
         lineAC = Line(color=PURPLE).put_start_and_end_on(
-            np.array([1, 0, 0]), np.array([0, 3 * np.sin(PI / 4), 0])
+            np.array([1, 0, 0]), np.array([0, 3 * np.sin(PI / 2), 0])
         )
 
         lineBD = Line(color=PINK).put_start_and_end_on(
-            np.array([-1, 0, 0]), np.array([0, 3 * np.sin(PI / 4), 0])
+            np.array([-1, 0, 0]), np.array([0, 3 * np.sin(PI / 2), 0])
         )
         lineCE = Line(color=PURPLE).put_start_and_end_on(
-            np.array([1, 0, 0]), np.array([0, 3 * np.sin(PI / 4), 0])
+            np.array([1, 0, 0]), np.array([0, 3 * np.sin(PI / 2), 0])
         )
 
-        pA = EuclidPointWithLabel(label="A").shift(LEFT * 1)
-        pB = EuclidPointWithLabel(label="B", position=RIGHT).shift(RIGHT * 1)
-        pC = EuclidPointWithLabel(label="C", position=UP).move_to(
-            UP * (np.sqrt(1 + (3 * np.sin(PI / 4)) ** 2))
+        pB = EuclidPointWithLabel(label="B").shift(LEFT * 1)
+        pC = EuclidPointWithLabel(label="C", position=RIGHT).shift(RIGHT * 1)
+        pA = EuclidPointWithLabel(label="A", position=UP).move_to(
+            UP * (3 * np.sin(PI / 2))
         )
 
         # sqrt(1 + (3*sin(pi/4))^2)
